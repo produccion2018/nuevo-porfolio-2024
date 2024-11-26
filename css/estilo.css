@@ -676,7 +676,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #131212;
+  background-color: #f4f4f4;
 }
 
 .container {
@@ -705,49 +705,49 @@ p {
   font-size: 1.2rem;
 }
 
-/* Media Query para Tablets y dispositivos de 768px o menos */
-@media (max-width: 768px) {
-  h1 {
-      font-size: 2.5rem;
-  }
-
-  p {
-      font-size: 1rem;
-  }
-
-  .container {
-      width: 85%;
-  }
-
-  header {
-      padding: 15px;
-  }
-
-  section {
-      padding: 30px 0;
-  }
-}
-
 /* Media Query para Smartphones y dispositivos de 480px o menos */
 @media (max-width: 480px) {
-  h1 {
-      font-size: 2rem;
-  }
-
-  p {
-      font-size: 0.9rem;
+  body {
+      font-size: 16px; /* Ajusta el tamaño de fuente para que se vea bien en pantallas pequeñas */
   }
 
   header {
-      padding: 10px;
+      padding: 15px; /* Reduce el padding en la cabecera para optimizar el espacio */
+      font-size: 1.2rem; /* Ajuste del tamaño de la fuente del header */
   }
 
-  section {
-      padding: 20px 0;
+  h1 {
+      font-size: 2rem; /* Ajuste de tamaño de fuente para el título */
+      margin-bottom: 10px; /* Menos margen abajo para ahorrar espacio */
+  }
+
+  p {
+      font-size: 1rem; /* Tamaño de fuente reducido para párrafos */
+      line-height: 1.5; /* Mejor espacio entre líneas */
   }
 
   .container {
-      width: 95%;
+      width: 95%; /* Usar casi todo el ancho disponible */
+      padding: 0 10px; /* Agregar algo de padding para evitar que el contenido toque los bordes */
+  }
+
+  section {
+      padding: 20px 0; /* Menos padding vertical para ahorrar espacio */
+  }
+
+  /* Ajustar imágenes para que no se desborden */
+  img {
+      max-width: 100%;
+      height: auto;
+  }
+
+  /* Ajustar botones o enlaces */
+  .btn {
+      padding: 10px 20px;
+      font-size: 1rem;
+      width: 100%; /* Botones a pantalla completa */
+      box-sizing: border-box;
+      margin: 10px 0;
   }
 }
 
