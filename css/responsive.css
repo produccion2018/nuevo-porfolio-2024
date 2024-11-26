@@ -3,7 +3,7 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #0a192f;
-    color: #fff;
+    color: #140101;
   }
   
   /* Header */
@@ -12,7 +12,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 15px 10%;
-    background-color: #020c1b;
+    background-color: #00050e;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -96,7 +96,7 @@ body {
   }
   
   .service-box {
-    background-color: #fff;
+    background-color: #0c0000;
     padding: 20px;
     border-radius: 10px;
     max-width: 300px;
