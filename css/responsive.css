@@ -1,0 +1,204 @@
+/* General styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0a192f;
+    color: #fff;
+  }
+  
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10%;
+    background-color: #020c1b;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  /* Logo container */
+  .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .logo {
+    height: 40px;
+  }
+  
+  /* Navigation */
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links a {
+    color: #64ffda;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  
+  /* Hero section */
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .hero-content {
+    margin-bottom: 20px;
+  }
+  
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .hero img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
+  
+  /* About section */
+  .about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #00060f;
+  }
+  
+  .about-container {
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .about-image img {
+    width: 150px;
+    border-radius: 10px;
+  }
+  
+  /* Services */
+  .services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .service-box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 300px;
+    text-align: center;
+  }
+  
+  /* Projects */
+  .projects-section {
+    padding: 20px;
+  }
+  
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .image-container {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  /* Contact form */
+  .contact-form {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  /* Footer */
+  .footer {
+    padding: 20px;
+    background-color: #020c1b;
+    text-align: center;
+  }
+  
+  /* Responsive Design */
+  @media (min-width: 768px) {
+    /* Header */
+    .header {
+      padding: 20px 15%;
+    }
+  
+    .nav-links a {
+      font-size: 1.2rem;
+    }
+  
+    /* Hero */
+    .hero {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  
+    .hero-content {
+      text-align: left;
+    }
+  
+    /* About */
+    .about-container {
+      flex-direction: row;
+      align-items: center;
+      gap: 50px;
+    }
+  
+    .about-image img {
+      width: 200px;
+    }
+  
+    /* Services */
+    .services {
+      justify-content: space-between;
+    }
+  
+    /* Gallery */
+    .image-container {
+      max-width: 200px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .hero h1 {
+      font-size: 3rem;
+    }
+  
+    .hero img {
+      width: 250px;
+      height: 250px;
+    }
+  
+    .about-container {
+      max-width: 1200px;
+    }
+  
+    .service-box {
+      max-width: 400px;
+    }
+  }
+  
+  
