@@ -422,7 +422,7 @@ a {
   border: 5px solid white; /* Borde blanco */
   opacity: 0.8; /* Opacidad inicial */
   z-index: 1;
-  background-color: rgba(255, 255, 255, 0.1); /* Fondo detrás de la foto */
+  background-color: #ffffff1a; /* Fondo detrás de la foto */
   padding: 10px;
   animation: opacidadInfinita 3s infinite alternate; /* Animación infinita de opacidad */
 }
@@ -495,46 +495,46 @@ a {
   color: #0e0101;
 }
 
-/* Contenedor de Servicios con Flexbox */
+/* Contenedor de Servicios con Grid */
 .servicios-container {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajusta automáticamente según el ancho disponible */
+  gap: 20px; /* Espaciado entre las cards */
+  padding: 10px;
 }
 
 /* Estilos de las tarjetas */
 .card {
   background-color: #0a192f;
-  padding: 20px;
+  padding: 15px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 250px;
   text-align: center;
   animation: infiniteAnim 3s linear infinite;
   border: 2px solid #007bff; /* Borde con color azul */
+  color: #fff;
+  transition: transform 0.3s ease;
 }
 
-
 .card:hover {
+  transform: scale(1.05); /* Efecto de zoom al hacer hover */
   border-color: #00c8ff; /* Color del borde al hacer hover */
 }
 
-
 .card i {
-  font-size: 3rem;
+  font-size: 3rem; 
   color: #007bff;
-  margin-bottom: 20px;
-}
-
-.card h3 {
-  font-size: 1.5rem;
-  color: #fff;
   margin-bottom: 15px;
 }
 
+.card h3 {
+  font-size: 1.2rem; 
+  color: #fff;
+  margin-bottom: 10px;
+}
+
 .card p {
-  font-size: 1rem;
+  font-size: 1rem; 
   color: #ccc;
 }
 
@@ -548,14 +548,21 @@ a {
 /* Diseño Responsivo */
 @media (max-width: 768px) {
   .servicios-container {
-      flex-direction: column;
-      align-items: center;
-  }
-  .card {
-      width: 80%;
+    grid-template-columns: repeat(2, 1fr); /* Dos cards por fila en tablets */
+    gap: 15px; /* Espaciado ajustado */
   }
 }
 
+@media (max-width: 480px) {
+  .servicios-container {
+    grid-template-columns: repeat(2, 1fr); /* Dos cards por fila en móviles */
+  }
+  .card {
+    padding: 10px; /* Espaciado más compacto */
+  }
+}
+
+________________________________________________________
 /* Sección Mis Proyectos */
 .proyectos {
   text-align: center;
@@ -564,7 +571,7 @@ a {
 }
 
 .proyectos h2 {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   margin-bottom: 30px;
   color: #fff;
   font-family: 'Arial', sans-serif; /* Tipografía de la página anterior */
@@ -574,13 +581,14 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 15px;
 }
 
 /* Estilos para las cards de los proyectos */
 .proyecto-card {
   position: relative;
-  flex-basis: calc(25% - 20px); /* 4 cards por fila */
+  flex-basis: calc(23% - 20px); /* 4 cards por fila en pantallas grandes */
+  max-width: 250px; /* Limitar el ancho */
   background-color: #fff;
   border-radius: 8px;
   overflow: hidden;
@@ -599,13 +607,13 @@ a {
 /* Imagen dentro de la card */
 .proyecto-img {
   width: 100%;
-  height: 150px;
+  height: 180px;
   object-fit: cover;
   transition: opacity 0.3s ease;
 }
 
 .proyecto-card:hover .proyecto-img {
-  opacity: 0.7; /* Efecto de opacidad en hover */
+  opacity: 0.8; /* Efecto de opacidad en hover */
 }
 
 .proyecto-card i {
@@ -638,22 +646,35 @@ a {
 }
 
 /* Diseño Responsivo */
+@media (max-width: 1024px) {
+  .proyecto-card {
+    flex-basis: calc(33% - 10px); /* 3 cards por fila en tablets grandes */
+  }
+}
+
 @media (max-width: 768px) {
   .proyecto-card {
-    flex-basis: calc(50% - 10px); /* 2 cards por fila en tablets */
+    flex-basis: calc(50% - 15px); /* 2 cards por fila en tablets */
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .proyecto-card {
-    flex-basis: calc(25% - 5px); /* 4 cards por fila en celulares */
+    flex-basis: calc(50% - 15px); /* 2 cards por fila en celulares */
   }
+}
 
   .proyectos-container {
-    gap: 10px; /* Reducir espacio entre cards */
+    gap: 15px; /* Reducir espacio entre cards */
   }
-}
 
+  .proyecto-card h3 {
+    font-size: 1rem; /* Ajustar tamaño del texto */
+  }
+
+  .proyecto-img {
+    height: 150px; /* Reducir tamaño de la imagen */
+  }
 
 
 /* Sección de Contacto */
