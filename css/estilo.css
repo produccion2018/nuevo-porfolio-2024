@@ -580,7 +580,7 @@ a {
 /* Estilos para las cards de los proyectos */
 .proyecto-card {
   position: relative;
-  width: 250px;
+  flex-basis: calc(25% - 20px); /* 4 cards por fila */
   background-color: #fff;
   border-radius: 8px;
   overflow: hidden;
@@ -639,14 +639,21 @@ a {
 
 /* Diseño Responsivo */
 @media (max-width: 768px) {
-  .proyectos-container {
-    flex-direction: column;
-    align-items: center;
-  }
   .proyecto-card {
-    width: 80%;
+    flex-basis: calc(50% - 10px); /* 2 cards por fila en tablets */
   }
 }
+
+@media (max-width: 480px) {
+  .proyecto-card {
+    flex-basis: calc(25% - 5px); /* 4 cards por fila en celulares */
+  }
+
+  .proyectos-container {
+    gap: 10px; /* Reducir espacio entre cards */
+  }
+}
+
 
 
 /* Sección de Contacto */
