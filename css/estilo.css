@@ -400,11 +400,13 @@ a {
   width: 350px;
   height: auto;
   border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  transition: opacity 0.5s ease;
-  border: 5px solid white; /* Borde blanco */
+  box-shadow: 0 4px 8px #0000004d;
+  transition: opacity 0.0s ease;
+  border: 5px solid #080000; /* Borde blanco */
   opacity: 0.9; /* Opacidad de la imagen */
   z-index: 1;
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo detrás de la foto */
+  padding: 10px;
 }
 
 .foto-perfil:hover {
@@ -439,11 +441,11 @@ a {
 }
 
 .descripcion strong {
-  color: #007bff; /* Azul para tecnologías CSS */
+  color: #007BFF; /* Azul para CSS */
 }
 
 .descripcion .html {
-  color: #ff5100; /* Naranja para HTML */
+  color: #FF5100; /* Naranja para HTML */
 }
 
 .descripcion .js {
