@@ -2,7 +2,7 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background-color: #0f0f0f; /* Fondo negro elegante */
+  background-color: #000000;
   color: #fff;
 }
 
@@ -17,7 +17,7 @@ a {
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.8); /* Fondo semitransparente */
+    background: #000000cc; 
     backdrop-filter: blur(8px); /* Efecto desenfoque */
     display: flex;
     justify-content: space-between;
@@ -72,6 +72,7 @@ a {
 
 /* Menú Hamburguesa */
 .menu-toggle {
+    font-family: 'Poppins', sans-serif;
     display: none;
     flex-direction: column;
     justify-content: space-between;
@@ -356,7 +357,7 @@ a {
 
 /* Sobre mi */
 .sobre-mi {
-  background-color: #0f0f0f;
+  background-color: #000000;
   padding: 50px 20px;
   box-shadow: 0 4px 8px #0000001a;
   margin: 20px;
@@ -371,7 +372,7 @@ a {
 
 .titulo {
   font-size: 2.5em;
-  color: #222;
+  color: #fffdfd;
   margin-bottom: 30px;
   animation: parpadeo 2s infinite; /* Animación infinita para el título */
 }
@@ -401,12 +402,25 @@ a {
   height: auto;
   border-radius: 15px;
   box-shadow: 0 4px 8px #0000004d;
-  transition: opacity 0.0s ease;
-  border: 5px solid #080000; /* Borde blanco */
-  opacity: 0.9; /* Opacidad de la imagen */
+  transition: opacity 0.5s ease;
+  border: 5px solid white; /* Borde blanco */
+  opacity: 0.8; /* Opacidad inicial */
   z-index: 1;
   background-color: rgba(255, 255, 255, 0.1); /* Fondo detrás de la foto */
   padding: 10px;
+  animation: opacidadInfinita 3s infinite alternate; /* Animación infinita de opacidad */
+}
+
+@keyframes opacidadInfinita {
+  0% {
+    opacity: 0.7; /* Opacidad baja */
+  }
+  50% {
+    opacity: 1; /* Opacidad completa */
+  }
+  100% {
+    opacity: 0.7; /* Opacidad baja */
+  }
 }
 
 .foto-perfil:hover {
@@ -452,3 +466,307 @@ a {
   color: #FFEB3B; /* Amarillo para JavaScript */
 }
 
+/* Sección Servicios */
+.servicios {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #f7f2f2ce;
+}
+
+.servicios h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #0e0101;
+}
+
+/* Contenedor de Servicios con Flexbox */
+.servicios-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Estilos de las tarjetas */
+.card {
+  background-color: #0a192f;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  text-align: center;
+  animation: infiniteAnim 3s linear infinite;
+  border: 2px solid #007bff; /* Borde con color azul */
+}
+
+
+.card:hover {
+  border-color: #00c8ff; /* Color del borde al hacer hover */
+}
+
+
+.card i {
+  font-size: 3rem;
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* Animación infinita para las tarjetas */
+@keyframes infiniteAnim {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Diseño Responsivo */
+@media (max-width: 768px) {
+  .servicios-container {
+      flex-direction: column;
+      align-items: center;
+  }
+  .card {
+      width: 80%;
+  }
+}
+
+/* Sección Mis Proyectos */
+.proyectos {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #000; /* Fondo negro */
+}
+
+.proyectos h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #fff;
+  font-family: 'Arial', sans-serif; /* Tipografía de la página anterior */
+}
+
+.proyectos-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Estilos para las cards de los proyectos */
+.proyecto-card {
+  position: relative;
+  width: 250px;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  color: #333;
+  text-align: center;
+  transition: transform 0.3s ease;
+  animation: infiniteAnim 3s linear infinite;
+}
+
+.proyecto-card:hover {
+  transform: scale(1.05); /* Efecto hover de escala */
+}
+
+/* Imagen dentro de la card */
+.proyecto-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+.proyecto-card:hover .proyecto-img {
+  opacity: 0.7; /* Efecto de opacidad en hover */
+}
+
+.proyecto-card i {
+  font-size: 3rem;
+  color: #007bff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.proyecto-card:hover i {
+  opacity: 1; /* Muestra el ícono de GitHub en hover */
+}
+
+.proyecto-card h3 {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Animación infinita para las cards */
+@keyframes infiniteAnim {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Diseño Responsivo */
+@media (max-width: 768px) {
+  .proyectos-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .proyecto-card {
+    width: 80%;
+  }
+}
+
+
+/* Sección de Contacto */
+.contacto {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #000; /* Fondo negro */
+  font-family: 'Arial', sans-serif; /* Tipografía de la página anterior */
+}
+
+.contacto h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #fff;
+  font-family: 'Arial', sans-serif; /* Tipografía de la página anterior */
+}
+
+.contacto-form {
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input, .textarea {
+  padding: 15px;
+  border-radius: 8px;
+  border: 2px solid #007bff;
+  background-color: #fff;
+  color: #333;
+  font-size: 1rem;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.input:focus, .textarea:focus {
+  border-color: #0056b3;
+}
+
+.textarea {
+  height: 120px;
+  resize: none;
+}
+
+.btn {
+  padding: 15px;
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+/* Animación infinita para el formulario */
+.contacto-form input, .contacto-form textarea, .contacto-form button {
+  animation: infiniteAnim 3s linear infinite;
+}
+
+/* Animación infinita */
+@keyframes infiniteAnim {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Footer */
+.footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.footer p {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icon {
+  color: #fff;
+  font-size: 1.5rem;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #007bff;
+}
+
+/* Diseño Responsivo */
+@media (max-width: 768px) {
+  .contacto-form {
+    width: 80%;
+  }
+}
+
+/* Estilo para el botón de WhatsApp */
+.whatsapp-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366; /* Color de WhatsApp */
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 24px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: rotateIn 2s linear infinite; /* Animación de rotación infinita */
+  transition: background-color 0.3s;
+}
+
+/* Efecto de animación (rotación infinita) */
+@keyframes rotateIn {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Efecto de hover */
+.whatsapp-icon:hover {
+  background-color: #128c7e; /* Cambio de color al pasar el mouse */
+}
