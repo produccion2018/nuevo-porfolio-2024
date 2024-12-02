@@ -578,26 +578,30 @@ ________________________________________________________
 }
 
 .proyectos-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Diseño responsivo con mínimo 150px */
+  gap: 20px;
+  justify-items: center;
 }
 
-/* Estilos para las cards de los proyectos */
+/* Estilos para las cards rectangulares */
 .proyecto-card {
   position: relative;
-  flex-basis: calc(23% - 20px); /* 4 cards por fila en pantallas grandes */
+  width: 100%;
   max-width: 250px; /* Limitar el ancho */
+  aspect-ratio: 4 / 3; /* Proporción 4:3 */
   background-color: #fff;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-decoration: none;
   color: #333;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  animation: borderAnim 3s linear infinite;
   transition: transform 0.3s ease;
-  animation: infiniteAnim 3s linear infinite;
 }
 
 .proyecto-card:hover {
@@ -607,75 +611,71 @@ ________________________________________________________
 /* Imagen dentro de la card */
 .proyecto-img {
   width: 100%;
-  height: 180px;
+  height: 70%;
   object-fit: cover;
-  transition: opacity 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .proyecto-card:hover .proyecto-img {
-  opacity: 0.8; /* Efecto de opacidad en hover */
+  transform: scale(1.1); /* Zoom en la imagen */
 }
 
-.proyecto-card i {
-  font-size: 3rem;
-  color: #007bff;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.proyecto-card:hover i {
-  opacity: 1; /* Muestra el ícono de GitHub en hover */
+/* Contenido de texto */
+.proyecto-content {
+  padding: 10px;
+  text-align: center;
 }
 
 .proyecto-card h3 {
   font-size: 1.2rem;
-  margin-top: 10px;
   font-weight: bold;
   color: #333;
+  margin-bottom: 5px;
 }
 
-/* Animación infinita para las cards */
-@keyframes infiniteAnim {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
+.proyecto-card p {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0;
+}
+
+/* Animación infinita de bordes */
+@keyframes borderAnim {
+  0% { box-shadow: 0 0 5px rgba(255, 0, 0, 0.8); }
+  50% { box-shadow: 0 0 15px rgba(255, 0, 255, 0.8); }
+  100% { box-shadow: 0 0 5px rgba(255, 0, 0, 0.8); }
 }
 
 /* Diseño Responsivo */
 @media (max-width: 1024px) {
-  .proyecto-card {
-    flex-basis: calc(33% - 10px); /* 3 cards por fila en tablets grandes */
-  }
-}
-
-@media (max-width: 768px) {
-  .proyecto-card {
-    flex-basis: calc(50% - 15px); /* 2 cards por fila en tablets */
-  }
-}
-
-@media (max-width: 768px) {
-  .proyecto-card {
-    flex-basis: calc(50% - 15px); /* 2 cards por fila en celulares */
-  }
-}
-
   .proyectos-container {
-    gap: 15px; /* Reducir espacio entre cards */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Más espacio en tablets */
+  }
+
+  .proyecto-card {
+    max-width: 200px; /* Reducir tamaño en tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .proyectos-container {
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas en móviles */
+  }
+
+  .proyecto-card {
+    max-width: 100%; /* Ocupan el ancho disponible */
   }
 
   .proyecto-card h3 {
-    font-size: 1rem; /* Ajustar tamaño del texto */
+    font-size: 1rem; /* Ajustar texto */
   }
 
-  .proyecto-img {
-    height: 150px; /* Reducir tamaño de la imagen */
+  .proyecto-card p {
+    font-size: 0.8rem; /* Reducir texto en móviles */
   }
+}
 
+_______________________________________________________________
 
 /* Sección de Contacto */
 .contacto {
