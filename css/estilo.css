@@ -563,7 +563,8 @@ a {
 }
 
 ________________________________________________________
-/* Sección Mis Proyectos */
+
+______/* Sección Mis Proyectos */
 .proyectos {
   text-align: center;
   padding: 50px 20px;
@@ -574,12 +575,12 @@ ________________________________________________________
   font-size: 2.2rem;
   margin-bottom: 30px;
   color: #fff;
-  font-family: 'Arial', sans-serif; /* Tipografía de la página anterior */
+  font-family: 'Arial', sans-serif;
 }
 
 .proyectos-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Diseño responsivo con mínimo 150px */
+  grid-template-columns: repeat(4, 1fr); /* 4 columnas por defecto */
   gap: 20px;
   justify-items: center;
 }
@@ -600,7 +601,7 @@ ________________________________________________________
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  animation: borderAnim 3s linear infinite;
+  animation: borderAnim 3s linear infinite, fadeInOut 4s ease-in-out infinite;
   transition: transform 0.3s ease;
 }
 
@@ -639,17 +640,22 @@ ________________________________________________________
   margin: 0;
 }
 
-/* Animación infinita de bordes */
+/* Animaciones */
 @keyframes borderAnim {
   0% { box-shadow: 0 0 5px rgba(255, 0, 0, 0.8); }
   50% { box-shadow: 0 0 15px rgba(255, 0, 255, 0.8); }
   100% { box-shadow: 0 0 5px rgba(255, 0, 0, 0.8); }
 }
 
+@keyframes fadeInOut {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
 /* Diseño Responsivo */
 @media (max-width: 1024px) {
   .proyectos-container {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Más espacio en tablets */
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas en tablets */
   }
 
   .proyecto-card {
@@ -674,8 +680,7 @@ ________________________________________________________
     font-size: 0.8rem; /* Reducir texto en móviles */
   }
 }
-
-_______________________________________________________________
+_________________________________________________________
 
 /* Sección de Contacto */
 .contacto {
