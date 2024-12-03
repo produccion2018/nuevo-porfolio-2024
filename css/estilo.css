@@ -490,6 +490,7 @@ a {
 }
 
 .servicios h2 {
+  text-align: center;
   font-size: 2.5rem;
   margin-bottom: 30px;
   color: #0e0101;
@@ -498,7 +499,7 @@ a {
 /* Contenedor de Servicios con Grid */
 .servicios-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajusta automáticamente según el ancho disponible */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ajusta automáticamente según el espacio disponible */
   gap: 20px; /* Espaciado entre las cards */
   padding: 10px;
 }
@@ -506,19 +507,20 @@ a {
 /* Estilos de las tarjetas */
 .card {
   background-color: #0a192f;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   text-align: center;
-  animation: infiniteAnim 3s linear infinite;
+  animation: infiniteAnim 5s ease-in-out infinite; /* Animación infinita más fluida */
   border: 2px solid #007bff; /* Borde con color azul */
   color: #fff;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-  transform: scale(1.05); /* Efecto de zoom al hacer hover */
+  transform: scale(1.1); /* Efecto de zoom al hacer hover */
   border-color: #00c8ff; /* Color del borde al hacer hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25); /* Sombra más intensa al hacer hover */
 }
 
 .card i {
@@ -528,7 +530,7 @@ a {
 }
 
 .card h3 {
-  font-size: 1.2rem; 
+  font-size: 1.4rem; 
   color: #fff;
   margin-bottom: 10px;
 }
@@ -540,9 +542,8 @@ a {
 
 /* Animación infinita para las tarjetas */
 @keyframes infiniteAnim {
-  0% { transform: scale(1); }
+  0%, 100% { transform: scale(1); }
   50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
 }
 
 /* Diseño Responsivo */
@@ -551,14 +552,18 @@ a {
     grid-template-columns: repeat(2, 1fr); /* Dos cards por fila en tablets */
     gap: 15px; /* Espaciado ajustado */
   }
+  .card {
+    padding: 15px; /* Ajuste para pantallas medianas */
+  }
 }
 
 @media (max-width: 480px) {
   .servicios-container {
-    grid-template-columns: repeat(2, 1fr); /* Dos cards por fila en móviles */
+    grid-template-columns: 1fr; /* Una card por fila en móviles */
   }
   .card {
     padding: 10px; /* Espaciado más compacto */
+    font-size: 0.9rem; /* Tamaño ajustado para texto */
   }
 }
 
@@ -571,6 +576,10 @@ ______/* Sección Mis Proyectos */
   background-color: #000; /* Fondo negro */
 }
 
+h2{
+  text-align: center;
+  opacity: 0.8;
+}
 .proyectos h2 {
   font-size: 2.2rem;
   margin-bottom: 30px;
@@ -642,9 +651,9 @@ ______/* Sección Mis Proyectos */
 
 /* Animaciones */
 @keyframes borderAnim {
-  0% { box-shadow: 0 0 5px rgba(255, 0, 0, 0.8); }
-  50% { box-shadow: 0 0 15px rgba(255, 0, 255, 0.8); }
-  100% { box-shadow: 0 0 5px rgba(255, 0, 0, 0.8); }
+  0% { box-shadow: 0 0 5px #ff0000cc; }
+  50% { box-shadow: 0 0 15px #ff00ffcc; }
+  100% { box-shadow: 0 0 5px #ff0000cc; }
 }
 
 @keyframes fadeInOut {
