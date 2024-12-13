@@ -796,35 +796,39 @@ _________________________________________________________
   }
 }
 
-/* Estilo para el botón de WhatsApp */
+/* Estilos para el ícono de WhatsApp */
 .whatsapp-icon {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #25d366; /* Color de WhatsApp */
-  color: white;
-  padding: 15px;
-  border-radius: 50%;
-  font-size: 24px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  animation: rotateIn 2s linear infinite; /* Animación de rotación infinita */
-  transition: background-color 0.3s;
+  bottom: 20px;  /* Ajusta la posición vertical */
+  right: 20px;   /* Ajusta la posición horizontal */
+  width: 60px;   /* Tamaño del ícono */
+  height: 60px;  /* Tamaño del ícono */
+  background-color: #25d366;  /* Color verde característico de WhatsApp */
+  border-radius: 50%;  /* Hace el ícono circular */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px #00000033;  /* Sombra para destacar el ícono */
+  font-size: 30px;  /* Tamaño del ícono */
+  color: white;  /* Color del ícono */
+  text-decoration: none;
+  transition: transform 0.3s ease-in-out;
+  animation: bounceUpDown 1.5s infinite ease-in-out;  /* Animación infinita hacia arriba y abajo */
 }
 
-/* Efecto de animación (rotación infinita) */
-@keyframes rotateIn {
+.whatsapp-icon:hover {
+  transform: scale(1.1);  /* Efecto de aumento en el hover */
+}
+
+/* Animación infinita hacia arriba y abajo */
+@keyframes bounceUpDown {
   0% {
-    transform: rotate(0deg);
+      transform: translateY(0);
   }
   50% {
-    transform: rotate(180deg);
+      transform: translateY(-10px);  /* Mueve el ícono hacia arriba */
   }
   100% {
-    transform: rotate(360deg);
+      transform: translateY(0);  /* Regresa al estado original */
   }
-}
-
-/* Efecto de hover */
-.whatsapp-icon:hover {
-  background-color: #128c7e; /* Cambio de color al pasar el mouse */
 }
