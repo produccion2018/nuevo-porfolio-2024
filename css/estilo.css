@@ -810,7 +810,7 @@ _________________________________________________________
   align-items: center;
   box-shadow: 0 4px 8px #00000033;  /* Sombra para destacar el ícono */
   font-size: 30px;  /* Tamaño del ícono */
-  color: white;  /* Color del ícono */
+  color: #ffffff;  /* Color del ícono */
   text-decoration: none;
   transition: transform 0.3s ease-in-out;
   animation: bounceUpDown 1.5s infinite ease-in-out;  /* Animación infinita hacia arriba y abajo */
